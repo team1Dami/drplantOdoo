@@ -12,5 +12,4 @@ class Equipment (models.Model):
     equipment_name = fields.Text()
     image = field.Image()
     price = field.Float()
-    uses = field.Text()
-    
+    uses = field.Selection([ ('riego', 'riego'),('sustrato', 'riego'),('general', 'riego'),],'Type', default='general')   
