@@ -12,4 +12,4 @@ class Plague(models.Model):
     remedy = fields.Text()
     control = fields.Text()
     type = fields.Selection()
-    image
+    image = fields.Image()
