@@ -6,11 +6,12 @@ from odoo import models
 class Plant(models.Model):
     _name = 'drplant.plant'
     
-    science_name = fields.Text(required=true)
-    common_name = fields.Text()
+    science_name = fields.Text(required=true,string="Science name")
+    common_name = fields.Text(string="Science name")
     description = fields.Text()
-    watering_frequence = fields.Timestamp()
     cares = fields.Text()
-    climate = fields.Text()
-    petfriendly = fields.Text()
-    image = fields.binary()
+    watering_frequence = fields.Timestamp()
+    petfriendly = fields.Selection([("cat", "cat" ),("dog","dog"),("both","both"),("no","no")])
+    plant_type = fields.Selection([("indoor","indoor"),("outdoor","outdoor"),("succulent","succulent")])
+    climate = fields.Selection([("hot","hot"),("cold","cold"),("dry","dry"),("wet","wet")]) 
+    image = fields.image()
