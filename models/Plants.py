@@ -15,3 +15,7 @@ class Plant(models.Model):
     plant_type = fields.Selection([("indoor","indoor"),("outdoor","outdoor"),("succulent","succulent")])
     climate = fields.Selection([("hot","hot"),("cold","cold"),("dry","dry"),("wet","wet")]) 
     image = fields.image()
+    
+    id_shop=fields.Many2Many(drplant.shop)
+    id_plague=fields.Many2Many(drplant.plague)
+    id_userplant=fields.One2Many(drplant.userplant, id_plant)

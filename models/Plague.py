@@ -13,3 +13,5 @@ class Plague(models.Model):
     control = fields.Text()
     type = fields.Selection()
     image = fields.Image()
+    
+    id_plants=fields.Many2Many(drplant.plants)

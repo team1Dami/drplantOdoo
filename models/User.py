@@ -17,4 +17,5 @@ class User(models.Model):
     lastAccess = fields.Date()
     lastPasswordChange = fields.Date()
     
-    
+    id_equipment=fields.Many2Many(drplant.equipment)
+    id_userplant=fields.One2Many(drplant.userplant,id_user)

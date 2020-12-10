@@ -12,3 +12,6 @@ class Shop(models.Model):
     locatiom = fields.String()
     commission = fields.Float()
     email = fields.String()
+
+    equipment=fields.One2Many(drplant.equipment, id_equipment)
+    plant=fields.Many2Many(drplant.plant,string="plants")

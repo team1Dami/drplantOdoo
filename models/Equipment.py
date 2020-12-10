@@ -13,3 +13,6 @@ class Equipment (models.Model):
     image = field.Image()
     price = field.Float()
     uses = field.Selection([ ('riego', 'riego'),('sustrato', 'riego'),('general', 'riego'),],'Type', default='general')   
+
+    shop=fields.Many2One(drplant.shop, onDelete="set null")
+    user=fields.Many2Many(drplant.user,string="user")
