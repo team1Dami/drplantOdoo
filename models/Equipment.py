@@ -6,13 +6,12 @@ from odoo import models
 class Equipment (models.Model):
     _name = 'drplant.equipment'
     
-    
-    id_equipment = fields.Integer()
+    id_equipment = fields.Integer(requiered=True)
     equipment_description = fields.Text()
     equipment_name = fields.Text()
-    image = field.Image()
+    image = field.Binary()
     price = field.Float()
-    uses = field.Selection([ ('riego', 'riego'),('sustrato', 'riego'),('general', 'riego'),],'Type', default='general')   
+    uses = field.Selection([('riego', 'riego'), ('sustrato', 'sustrato'), ('general', 'general'), ], 'Type', default='general')   
 
-    shop=fields.Many2One(drplant.shop, onDelete="set null")
-    user=fields.Many2Many(drplant.user,string="user")
+    shop = fields.Many2one('drplant.shop', onDelete="set null")
+    user = fields.Many2many('drplant.user', string="user")

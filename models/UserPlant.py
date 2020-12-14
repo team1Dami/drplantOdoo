@@ -2,13 +2,14 @@
 # To change this template file, choose Tools | Templates
 # and open the template in the editor.
 
-from odoo import models,fields,api
+from odoo import fields
+from odoo import models
 
 class UserPlant(models.Model):
-    __name='drplant.UserPlant'
+    _name = 'drplant.userplant'
     
-    date_watering=fields.Date()
+    date_watering = fields.Date()
     
-    id_user=fields.Many2One(drplant.user)
-    id_plant=fields.Many2One(drplant.plant)
+    id_user = fields.Many2one('drplant.user')
+    id_plant = fields.Many2one('drplant.plant')
     

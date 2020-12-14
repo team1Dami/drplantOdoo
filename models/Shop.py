@@ -2,16 +2,18 @@
 # To change this template file, choose Tools | Templates
 # and open the template in the editor.
 
-from odoo import models,fields,api
+from odoo import fields
+from odoo import models
 
 class Shop(models.Model):
-    __name='new_module.shop'
-    id_shop = fields.Integer(required = True)
+    _name = 'drplant.shop'
+    
+    id_shop = fields.Integer(required=True)
     shop_name = fields.Char()
     url = fields.Char()
-    locatiom = fields.String()
+    location = fields.Text()
     commission = fields.Float()
-    email = fields.String()
+    email = fields.Text()
 
-    equipment=fields.One2Many(drplant.equipment, id_equipment)
-    plant=fields.Many2Many(drplant.plant,string="plants")
+    equipment = fields.One2many('drplant.equipment', 'id_equipment', string="Equipments")
+    plant = fields.Many2many('drplant.plant',string="Plants")
