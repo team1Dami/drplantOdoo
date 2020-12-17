@@ -9,7 +9,7 @@
         Module that can create, modify and delete shops
     """,
 
-    'author': "My Company",
+    'author': "DrPlant",
     'website': "http://www.yourcompany.com",
 
     # Categories can be used to filter modules in modules listing
