@@ -10,7 +10,7 @@ class Plant(models.Model):
     _name = 'drplant.plant'
     
     science_name = fields.Char(required=True, string="Science name")
-    common_name = fields.Char(string="Science name")
+    common_name = fields.Char(string="Common name")
     description = fields.Text()
     cares = fields.Text()
     watering_frequence = fields.Float()

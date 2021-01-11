@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="windows-1252"?>
 <odoo>
   <data>
     <!-- explicit list view definition -->
@@ -25,7 +26,7 @@
     -->
 
     <!-- server action to the one above -->
-    <!--
+     <!--
     <record model="ir.actions.server" id="drplant.action_server">
       <field name="name">drplant server</field>
       <field name="model_id" ref="model_drplant_drplant"/>
@@ -39,21 +40,32 @@
     </record>
     -->
 
-    <!-- Top menu item -->
-    <!--
-    <menuitem name="drplant" id="drplant.menu_root"/>
-    -->
+    <menuitem name="drplant" id="drplant_menu_root"/> 
     <!-- menu categories -->
     <!--
     <menuitem name="Menu 1" id="drplant.menu_1" parent="drplant.menu_root"/>
     <menuitem name="Menu 2" id="drplant.menu_2" parent="drplant.menu_root"/>
     -->
     <!-- actions -->
-    <!--
+     <!--
     <menuitem name="List" id="drplant.menu_1_list" parent="drplant.menu_1"
               action="drplant.action_window"/>
     <menuitem name="Server to list" id="drplant" parent="drplant.menu_2"
               action="drplant.action_server"/>
-    -->
+     -->
+    
+    <!--
+    <record model="ir.ui.view" id="drplant_shop_list">
+          <field name="name">shop list</field>
+          <field name="model">drplant.shop</field>
+          <field name="arch" type="xml">
+            <tree>
+              <field name="shop_name"/>
+              <field name="commission"/>
+              <field name="email"/>
+              <field name="url"/>
+            </tree>
+          </field>
+        </record>-->
   </data>
 </odoo>
