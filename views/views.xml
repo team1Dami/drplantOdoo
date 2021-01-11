@@ -11,7 +11,7 @@
               <field name="shop_name"/>
               <field name="url"/>
               <field name="location"/> 
-              <field name="comission"/>               
+              <field name="commission"/>               
               <field name="email"/> 
             </tree>
           </field>
