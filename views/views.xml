@@ -71,17 +71,17 @@
     
         <!-- menu categories -->
       
-        <menuitem name="Shops" id="drplant_menu_1" parent="drplant.menu_root"/>
+        <menuitem name="Shops" id="drplant_menu_1" parent="drplant_menu_root"/>
         <!--<menuitem name="Menu 2" id="drplant.menu_2" parent="drplant.menu_root"/>-->
     
         <!-- actions -->
        
-        <menuitem name="List" id="drplant.menu_1_list" parent="drplant_menu_1"
+        <menuitem name="List" id="drplant_menu_1_list" parent="drplant_menu_1"
                   action="drplant_action_window"/>
         <!--<menuitem name="Server to list" id="drplant" parent="drplant.menu_2"
                   action="drplant.action_server"/>-->
         
-        <menuitem name="Plants" id="drplant.menuPlants" parent="drplant_menu_root"/>
+        <menuitem name="Plants" id="drplant_menuPlants" parent="drplant_menu_root"/>
         
         <menuitem name="List" id="drplant_menu_2_list" parent="drplant_menuPlants"
                   action="drplant_action_window_Plant"/>
