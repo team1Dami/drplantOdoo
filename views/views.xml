@@ -3,6 +3,7 @@
        
         <!-- explicit list view definition -->
         
+
         <record model="ir.ui.view" id="drplant_listShop">
             <field name="name">drplant list</field>
             <field name="model">drplant.shop</field>
@@ -144,7 +145,6 @@
     
         <!-- actions -->
        
-
         <!--<menuitem name="Server to list" id="drplant" parent="drplant.menu_2"
         action="drplant.action_server"/>-->
         
@@ -163,6 +163,6 @@
         
         <menuitem name="ListPlagues" id="drplant_menu_Plague_list" parent="drplant_menu_Plague"
                   action="drplant_action_window_Plague"/>
-        
+
     </data>
 </odoo>
