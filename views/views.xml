@@ -3,87 +3,166 @@
        
         <!-- explicit list view definition -->
         
-        <record model="ir.ui.view" id="drplant_list">
-          <field name="name">drplant list</field>
-          <field name="model">drplant.shop</field>
-          <field name="arch" type="xml">
-            <tree>
-              <field name="shop_name"/>
-              <field name="url"/>
-              <field name="location"/> 
-              <field name="commission"/>               
-              <field name="email"/> 
-            </tree>
-          </field>
+
+        <record model="ir.ui.view" id="drplant_listShop">
+            <field name="name">drplant list</field>
+            <field name="model">drplant.shop</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="shop_name"/>
+                    <field name="url"/>
+                    <field name="location"/> 
+                    <field name="commission"/>               
+                    <field name="email"/> 
+                </tree>
+            </field>
         </record>
+        
+        <record model="ir.ui.view" id="drplant_listEquipment">
+            <field name="name">Equipment window</field>
+            <field name="model">drplant.equipment</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="equipment_name"/>
+                    <field name="equipment_description"/>
+                    <field name="image"/> 
+                    <field name="price"/>               
+                    <field name="uses"/> 
+                </tree>
+            </field>
+        </record>
+        
+        <record model="ir.ui.view" id="drplant_listPlant">
+            <field name="name">drplant list Plants</field>
+            <field name="model">drplant.plant</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="science_name"/>
+                    <field name="common_name"/>
+                    <field name="description"/> 
+                    <field name="cares"/>               
+                    <field name="watering_frequence"/> 
+                </tree>
+            </field>
+        </record>
+        <!--
+        <record model="ir.ui.view" id="drplant_listUser">
+            <field name="name">drplant list Users</field>
+            <field name="model">drplant.User</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="status"/>
+                    <field name="privilage"/>
+                    <field name="lastAccess"/> 
+                    <field name="lastPasswordChange"/>               
+                </tree>
+            </field>
+        </record>
+        -->
+        <record model="ir.ui.view" id="drplant_listPlague">
+            <field name="name">drplant list Plagues</field>
+            <field name="model">drplant.plague</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="image"/> 
+                    <field name="science_name"/>
+                    <field name="common_name"/>
+                    <field name="description"/> 
+                    <field name="remedy"/>   
+                    <field name="control"/>  
+                    <field name="plague_type"/>              
+                </tree>
+            </field>
+        </record>
+        
         
 
         <!-- actions opening views on models -->
         
-        <record model="ir.actions.act_window" id="drplant_action_window">
-          <field name="name">drplant window</field>
-          <field name="res_model">drplant.shop</field>
-          <field name="view_mode">tree,form</field>
+        <record model="ir.actions.act_window" id="drplant_action_window_shop">
+            <field name="name">drplant list Shops</field>
+            <field name="res_model">drplant.shop</field>
+            <field name="view_mode">tree,form</field>
         </record>
         
-        
-        
-        <record model="ir.ui.view" id="drplant_listPlant">
-          <field name="name">drplant list Plants</field>
-          <field name="model">drplant.plant</field>
-          <field name="arch" type="xml">
-            <tree>
-              <field name="science_name"/>
-              <field name="common_name"/>
-              <field name="description"/> 
-              <field name="cares"/>               
-              <field name="watering_frequence"/> 
-            </tree>
-          </field>
+        <record model="ir.actions.act_window" id="drplant_action_window_Equipment">
+            <field name="name">drplant list Equipment</field>
+            <field name="res_model">drplant.equipment</field>
+            <field name="view_mode">tree,form</field>
         </record>
-        
         
         <record model="ir.actions.act_window" id="drplant_action_window_Plant">
-          <field name="name">drplant window</field>
-          <field name="res_model">drplant.plant</field>
-          <field name="view_mode">tree,form</field>
+            <field name="name">drplant list Plants</field>
+            <field name="res_model">drplant.plant</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <!--
+        <record model="ir.actions.act_window" id="drplant_action_window_User">
+            <field name="name">drplant list User</field>
+            <field name="res_model">drplant.user</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        -->
+        
+        <record model="ir.actions.act_window" id="drplant_action_window_Plague">
+            <field name="name">drplant list Plague</field>
+            <field name="res_model">drplant.plague</field>
+            <field name="view_mode">tree,form</field>
         </record>
         
-
+ 
         <!-- server action to the one above -->
         <!--
-        <record model="ir.actions.server" id="drplant.action_server">
-          <field name="name">drplant server</field>
-          <field name="model_id" ref="model_drplant_drplant"/>
-          <field name="code">
-            action = {
-              "type": "ir.actions.act_window",
-              "view_mode": "tree,form",
-              "res_model": self._name,
-            }
-          </field>
-        </record>
-       -->
+         <record model="ir.actions.server" id="drplant.action_server">
+           <field name="name">drplant server</field>
+           <field name="model_id" ref="model_drplant_drplant"/>
+           <field name="code">
+             action = {
+               "type": "ir.actions.act_window",
+               "view_mode": "tree,form",
+               "res_model": self._name,
+             }
+           </field>
+         </record>
+        -->
 
         <!-- Top menu item -->
       
         <menuitem name="drplant" id="drplant_menu_root"/>
     
         <!-- menu categories -->
-      
-        <menuitem name="Shops" id="drplant_menu_1" parent="drplant_menu_root"/>
+              <menuitem name="Plants" id="drplant_menuPlants" parent="drplant_menu_root"/> 
+              
+              <menuitem name="Equipment" id="drplant_menu_Equipment" parent="drplant_menu_root"/>
+              
+              <menuitem name="Shops" id="drplant_menu_Shop" parent="drplant_menu_root"/>
+              
+             <!-- <menuitem name="Users" id="drplant_menu_User" parent="drplant_menu_root"/> -->
+              
+              <menuitem name="Plagues" id="drplant_menu_Plague" parent="drplant_menu_root"/>
+
         <!--<menuitem name="Menu 2" id="drplant.menu_2" parent="drplant.menu_root"/>-->
     
         <!-- actions -->
        
-        <menuitem name="List" id="drplant_menu_1_list" parent="drplant_menu_1"
-                  action="drplant_action_window"/>
         <!--<menuitem name="Server to list" id="drplant" parent="drplant.menu_2"
-                  action="drplant.action_server"/>-->
+        action="drplant.action_server"/>-->
         
-        <menuitem name="Plants" id="drplant_menuPlants" parent="drplant_menu_root"/>
-        
-        <menuitem name="List" id="drplant_menu_2_list" parent="drplant_menuPlants"
+
+        <menuitem name="ListPlants" id="drplant_menu_Plant_list" parent="drplant_menuPlants"
                   action="drplant_action_window_Plant"/>
+              
+        <menuitem name="ListEquipment" id="drplant_menu_Equipment_list" parent="drplant_menu_Equipment"
+                  action="drplant_action_window_Equipment"/>
+        
+        <menuitem name="ListShops" id="drplant_menu_Shop_list" parent="drplant_menu_Shop"
+                  action="drplant_action_window_shop"/>
+        <!--
+        <menuitem name="ListUsers" id="drplant_menu_User_list" parent="drplant_menu_User"
+                  action="drplant_action_window_User"/>-->
+        
+        <menuitem name="ListPlagues" id="drplant_menu_Plague_list" parent="drplant_menu_Plague"
+                  action="drplant_action_window_Plague"/>
+
     </data>
 </odoo>
