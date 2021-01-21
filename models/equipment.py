@@ -9,7 +9,6 @@ from odoo import models
 class Equipment (models.Model):
     _name = 'drplant.equipment'
     
-    id_equipment = fields.Integer(requiered=True)
     equipment_description = fields.Text()
     equipment_name = fields.Text()
     image = fields.Binary()

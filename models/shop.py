@@ -9,12 +9,11 @@ from odoo import models
 class Shop(models.Model):
     _name = 'drplant.shop'
     
-    id_shop = fields.Integer(required=True)
     shop_name = fields.Char()
     url = fields.Char()
     location = fields.Text()
     commission = fields.Float()
     email = fields.Text()
 
-    equipment = fields.One2many('drplant.equipment', 'id_equipment', string="Equipments")
+    equipment = fields.One2many('drplant.equipment', 'id', string="Equipments")
     plant = fields.Many2many('drplant.plant',string="Plants")
