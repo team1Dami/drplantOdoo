@@ -1,0 +1,52 @@
+<odoo>
+    <template id="drplant.report_shops_view">
+        <t t-cell="report.html_container">
+            <t t-foreach="shop" t-as="shop">
+                <t t-call="report.external_layout">
+                    <div class="page">
+                        <h2 t-field="shop.shop_name"/>
+                        <table class="table table-condensed">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Commision</th>
+                                    <th>Url</th>
+                                    <th>Email</th>
+                                    <th>Location</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <span t-field="shop.shop_name"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="shop.commission"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="shop.url"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="shop.email"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="shop.location"/>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+    
+    
+    
+    <report id="report_plant"
+            model="drplant.shop"
+            string="Shop Report"
+            name="drplant.report_shops_view"
+            file="drplant.report_shops"
+            report_type="qweb-pdf"/>
+</odoo>
