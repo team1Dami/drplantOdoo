@@ -1,40 +1,17 @@
 <odoo>
     <template id="drplant.report_shops_view">
-        <t t-cell="report.html_container">
-            <t t-foreach="shop" t-as="shop">
+        <t t-call="report.html_container">
+            <t t-foreach="docs" t-as="doc">
                 <t t-call="report.external_layout">
                     <div class="page">
-                        <h2 t-field="shop.shop_name"/>
-                        <table class="table table-condensed">
-                            <thead>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Commision</th>
-                                    <th>Url</th>
-                                    <th>Email</th>
-                                    <th>Location</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <span t-field="shop.shop_name"/>
-                                    </td>
-                                    <td>
-                                        <span t-field="shop.commission"/>
-                                    </td>
-                                    <td>
-                                        <span t-field="shop.url"/>
-                                    </td>
-                                    <td>
-                                        <span t-field="shop.email"/>
-                                    </td>
-                                    <td>
-                                        <span t-field="shop.location"/>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <br/><br/><br/><br/><br/>
+                        <ul>
+                            <li>Nombre: <span t-field="doc.shop_name"/></li>
+                            <li>Location: <span t-field="doc.location"/></li>
+                            <li>Comision: <span t-field="doc.commission"/></li>
+                            <li>Email: <span t-field="doc.email"/></li>
+                            <li>Url: <span t-field="doc.url"/></li>
+                        </ul>
                     </div>
                 </t>
             </t>
