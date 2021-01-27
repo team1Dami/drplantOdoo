@@ -1,0 +1,7 @@
+<odoo>
+    <data>
+        <record id="group_admin" model="res.groups">
+            <field name="name">DrPlant/ Admin</field>
+        </record>
+    </data>
+</odoo>

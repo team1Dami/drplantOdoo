@@ -4,17 +4,63 @@
         <!-- explicit list view definition -->
         
 
+        
+        <record model="ir.ui.view" id="drplant_Shop">
+            <field name="name">drplant list</field>
+            <field name="model">drplant.shop</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group string="Shop name">
+                        <field name="shop_name" />
+                    </group>
+                    <group>
+                        <field name="url"/>
+                        <field name="email"/> 
+                        <field name="location"/> 
+                        <field name="commission"/>               
+                    </group>
+                    <notebook>
+                        <page string="Equipamientos">
+                            <field name="equipment"/>
+                        </page>
+                        <page string="Plantas">
+                            <field name="plant"/>
+                        </page>
+                    </notebook>
+                    
+                </form>
+            </field>
+        </record>
+        
         <record model="ir.ui.view" id="drplant_listShop">
             <field name="name">drplant list</field>
             <field name="model">drplant.shop</field>
             <field name="arch" type="xml">
                 <tree>
-                    <field name="shop_name"/>
+                    <field name="shop_name" />
                     <field name="url"/>
-                    <field name="location"/> 
-                    <field name="commission"/>               
                     <field name="email"/> 
                 </tree>
+            </field>
+        </record>
+        
+        
+        <record model="ir.ui.view" id="drplant_Equipment">
+            <field name="name">Equipment window</field>
+            <field name="model">drplant.equipment</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="equipment_name"/>
+                    </group>
+                    <group>
+                        <field name="equipment_description"/>
+                        <field name="image"/> 
+                        <field name="price"/>               
+                        <field name="uses"/> 
+                        <field name="shop"/>
+                    </group>
+                </form>
             </field>
         </record>
         
@@ -24,11 +70,33 @@
             <field name="arch" type="xml">
                 <tree>
                     <field name="equipment_name"/>
-                    <field name="equipment_description"/>
-                    <field name="image"/> 
                     <field name="price"/>               
                     <field name="uses"/> 
                 </tree>
+            </field>
+        </record>
+        
+        <record model="ir.ui.view" id="drplant_Plant">
+            <field name="name">drplant list Plants</field>
+            <field name="model">drplant.plant</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="science_name"/>
+                        <field name="common_name"/>
+                        <field name="description"/> 
+                        <field name="cares"/>               
+                        <field name="watering_frequence"/> 
+                    </group>
+                    <notebook>
+                        <page string="Tiendas">
+                            <field name="id_shop"/>
+                        </page>
+                        <page string="Plagas">
+                            <field name="id_plague"/>
+                        </page>
+                    </notebook>
+                </form>
             </field>
         </record>
         
@@ -39,42 +107,43 @@
                 <tree>
                     <field name="science_name"/>
                     <field name="common_name"/>
-                    <field name="description"/> 
-                    <field name="cares"/>               
-                    <field name="watering_frequence"/> 
                 </tree>
             </field>
         </record>
-        <!--
-        <record model="ir.ui.view" id="drplant_listUser">
-            <field name="name">drplant list Users</field>
-            <field name="model">drplant.User</field>
+        
+        <record model="ir.ui.view" id="drplant_Plague">
+            <field name="name">drplant list Plagues</field>
+            <field name="model">drplant.plague</field>
             <field name="arch" type="xml">
-                <tree>
-                    <field name="status"/>
-                    <field name="privilage"/>
-                    <field name="lastAccess"/> 
-                    <field name="lastPasswordChange"/>               
-                </tree>
+                <form>
+                    <group>
+                        <field name="science_name"/>
+                        <field name="common_name"/>
+                        <field name="description"/> 
+                        <field name="remedy"/>   
+                        <field name="control"/>  
+                        <field name="plague_type"/>              
+                        <field name="image"/> 
+                    </group>
+                    <notebook>
+                        <page string="Plantas">
+                            <field name="id_plants"/>
+                        </page>
+                    </notebook>
+                </form>
             </field>
         </record>
-        -->
+        
         <record model="ir.ui.view" id="drplant_listPlague">
             <field name="name">drplant list Plagues</field>
             <field name="model">drplant.plague</field>
             <field name="arch" type="xml">
                 <tree>
-                    <field name="image"/> 
                     <field name="science_name"/>
                     <field name="common_name"/>
-                    <field name="description"/> 
-                    <field name="remedy"/>   
-                    <field name="control"/>  
-                    <field name="plague_type"/>              
                 </tree>
             </field>
         </record>
-        
         
 
         <!-- actions opening views on models -->
@@ -131,22 +200,15 @@
         <menuitem name="drplant" id="drplant_menu_root"/>
     
         <!-- menu categories -->
-              <menuitem name="Plants" id="drplant_menuPlants" parent="drplant_menu_root"/> 
+        <menuitem name="Plants" id="drplant_menuPlants" parent="drplant_menu_root"/> 
               
-              <menuitem name="Equipment" id="drplant_menu_Equipment" parent="drplant_menu_root"/>
+        <menuitem name="Equipment" id="drplant_menu_Equipment" parent="drplant_menu_root"/>
               
-              <menuitem name="Shops" id="drplant_menu_Shop" parent="drplant_menu_root"/>
+        <menuitem name="Shops" id="drplant_menu_Shop" parent="drplant_menu_root"/>
               
-             <!-- <menuitem name="Users" id="drplant_menu_User" parent="drplant_menu_root"/> -->
+        <!-- <menuitem name="Users" id="drplant_menu_User" parent="drplant_menu_root"/> -->
               
-              <menuitem name="Plagues" id="drplant_menu_Plague" parent="drplant_menu_root"/>
-
-        <!--<menuitem name="Menu 2" id="drplant.menu_2" parent="drplant.menu_root"/>-->
-    
-        <!-- actions -->
-       
-        <!--<menuitem name="Server to list" id="drplant" parent="drplant.menu_2"
-        action="drplant.action_server"/>-->
+        <menuitem name="Plagues" id="drplant_menu_Plague" parent="drplant_menu_root"/>
         
 
         <menuitem name="ListPlants" id="drplant_menu_Plant_list" parent="drplant_menuPlants"
@@ -158,8 +220,8 @@
         <menuitem name="ListShops" id="drplant_menu_Shop_list" parent="drplant_menu_Shop"
                   action="drplant_action_window_shop"/>
         <!--
-        <menuitem name="ListUsers" id="drplant_menu_User_list" parent="drplant_menu_User"
-                  action="drplant_action_window_User"/>-->
+<menuitem name="ListUsers" id="drplant_menu_User_list" parent="drplant_menu_User"
+        action="drplant_action_window_User"/>-->
         
         <menuitem name="ListPlagues" id="drplant_menu_Plague_list" parent="drplant_menu_Plague"
                   action="drplant_action_window_Plague"/>
