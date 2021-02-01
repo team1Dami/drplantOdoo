@@ -105,9 +105,19 @@
             <field name="model">drplant.plant</field>
             <field name="arch" type="xml">
                 <tree>
-                    <field name="science_name"/>
                     <field name="common_name"/>
+                    <field name="science_name"/>
                 </tree>
+            </field>
+        </record>
+        
+        <record model="ir.ui.view" id="drplant_searchPlant">
+            <field name="name">drplant list Plants</field>
+            <field name="model">drplant.plant</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="common_name"/>
+                </search>
             </field>
         </record>
         

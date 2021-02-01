@@ -25,6 +25,7 @@
     'data': [
         'views/views.xml',
         'views/reports.xml',
+        'views/plantreport.xml',        
         'security/security.xml',
         'security/ir.model.access.csv'
 

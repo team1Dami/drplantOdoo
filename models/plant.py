@@ -6,6 +6,7 @@
 from odoo import api
 from odoo import fields
 from odoo import models
+import re 
 from odoo.exceptions import ValidationError
 
 class Plant(models.Model):
@@ -32,5 +33,9 @@ class Plant(models.Model):
             if Plant.watering_frequence < 0:
                 raise ValidationError("You can`t enter a negative number: %s" % Plant.watering_frequence)
             
-    
-    
+    @api.onchange('common_name')
+    def _check_common_name_do_not_start_with_number(self):
+        if self.common_name:
+            match = re.match(r'^[a-zA-Z][ a-zA-Z]*', self.common_name)
+            if match == None:
+                raise ValidationError('Cannot start with number')

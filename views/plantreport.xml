@@ -1,0 +1,27 @@
+<odoo>
+    <template id="drplant.report_plant_view">
+        <t t-call="report.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="report.external_layout">
+                    <div class="page">
+                        <br/><br/><br/><br/><br/>
+                        <ul>
+                            <li>Nombre cientifico: <span t-field="doc.science_name"/></li>
+                            <li>Nombre comun: <span t-field="doc.common_name"/></li>
+                            <li>Descripcion: <span t-field="doc.description"/></li>
+                        </ul>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+    
+    
+    
+    <report id="report_plants"
+            model="drplant.plant"
+            string="Plant Report"
+            name="drplant.report_plant_view"
+            file="drplant.report_plant"
+            report_type="qweb-pdf"/>
+</odoo>
